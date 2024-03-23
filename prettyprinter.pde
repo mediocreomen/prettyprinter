@@ -159,19 +159,19 @@ void draw() {
   
   // Draw backing grid
   for (int x = 0; x <= puzzle_size; x = x + 1) {
-    line((x * cell_size) + cell_margin, cell_margin, (x * cell_size) + cell_margin, 600 - cell_margin);
+    line((x * cell_size) + cell_margin, cell_margin, (x * cell_size) + cell_margin, (puzzle_size * cell_size) + cell_margin);
   }
   for (int y = 0; y <= puzzle_size; y = y + 1) {
-    line(cell_margin, (y * cell_size) + cell_margin, 600 - cell_margin, (y * cell_size) + cell_margin);
+    line(cell_margin, (y * cell_size) + cell_margin, (puzzle_size * cell_size) + cell_margin, (y * cell_size) + cell_margin);
   }
   
   // Draw outside square in thicker lines
   strokeWeight(4);
   stroke(0);
-  line(cell_margin, cell_margin, cell_margin, 600 - cell_margin);
-  line(cell_margin, cell_margin, 600 - cell_margin, cell_margin);
-  line(600 - cell_margin, 600 - cell_margin, 600 - cell_margin, cell_margin);
-  line(600 - cell_margin, 600 - cell_margin, cell_margin, 600 - cell_margin);
+  line(cell_margin, cell_margin, cell_margin, (puzzle_size * cell_size) + cell_margin);
+  line(cell_margin, cell_margin, (puzzle_size * cell_size) + cell_margin, cell_margin);
+  line((puzzle_size * cell_size) + cell_margin, (puzzle_size * cell_size) + cell_margin, (puzzle_size * cell_size) + cell_margin, cell_margin);
+  line((puzzle_size * cell_size) + cell_margin, (puzzle_size * cell_size) + cell_margin, cell_margin, (puzzle_size * cell_size) + cell_margin);
   
   // Draw rule text (+1, 3, etc.)
   textAlign(LEFT, TOP);
@@ -222,7 +222,7 @@ void draw() {
   textAlign(CENTER, CENTER);
   fill(100,0,0);
   if (puzzle_size <= 5) {
-    textSize(48);
+    textSize(56);
   }
   else {
     textSize(36);
